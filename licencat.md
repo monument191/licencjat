@@ -1,42 +1,73 @@
 Co to jest krypto waluta? Pytanie coraz częściej zadawane w dzisiejszych
-czasach z powodu ich znaczenia na rynku. Zaczelo się to jako produkt
-poboczny w innej innowacji, jako produkt nie miał zostać walutą. Lecz w
-2008 bitcoin został wypuszczony jako „Peer-to-Peer system platnosci
-electronicznej". Nie potrzebowaly one serwera, ani centralnej
-administracji. Była to pierwsz udana proba od początku pomysłu, czyli od
-lat dziewiedziestiatych, przez cala dekade proby były podejmowane, lecz
-wszystkie skonczyly się niepowodzeniem. Dzieki pomysłowi Saotshi
-Nakamoto Bitcoin stal się dość popularna waluta. Lecz jeżeli zabierzemy
-caly marketing, jest to poporstu wartość w bazie danych, lecz jak
-popatrzymy na prawdziwa walute przetrzymywana w bankach jest to to
-samo.\
+czasach z powodu ich znaczenia na rynku. W 2008 został wypuszczony
+Bitcoin, „Peer-to-Peer" system platnosci electronicznej". Nie
+potrzebowal on serwera, ani centralnej administracji. Była to pierwsza
+waluta wykorzystujaca ten system, od lat dziewiedziestiatych, przez cala
+dekade proby wykozystania tego systemu były podejmowane, lecz wszystkie
+skonczyly się niepowodzeniem. Dzieki pomysłowi Saotshi Nakamoto Bitcoin
+stal się dość popularna waluta, kiedy zabierzemy caly marketing będzie
+to porpostu wartość w bazie danych, czyli jak pieniądze na naszych
+kontach w banku.\
 Jak to działa?
 
 Tutaj nei ma ustalonej wartości, sama waluta nie ma swojego odpowiednika
 w przedmiotach materialnych, jest tam wiara w system, gdyż sa to tylko
 wartości w bazie danych, wielkim plusem takiego sposobu jest brak
-administracji oraz udziału państw. Jest przez to nie ograniczony
-prawami, nie ma tez kogos kto administruje danymi, każdy użytkownik
-posiada kopie wszystkich wartości każdego użytkownika. Dzieki temu
-poporstu ogłaszamy ze chcemy zrobić transfer z danego konta na inne
-konto podajac jego dane oraz wartrosc przeslanej waluty. Aby zapobiec
-podszywaniu się pod innych uzytkownikow, gdyż wszytkei numery sa
-publiczne, używane sa klucze które odpowiadają podpisa w checkach i
-wekslach. Pozwala ona innym użytkownika potwierdzić ze ta tranzakcja
-została wyslana przez wlasnie tego użytkownika. Sa one unikalne dla
-każdej transakcji wiec nie jest to system w którym latwo możemy podrobić
-czyjs podpis.
+administracji oraz udziału państw. \[problem4\] . Dzieki temu poporstu
+ogłaszamy ze chcemy zrobić transfer z danego konta na inne konto podajac
+jego dane oraz wartrosc przeslanej waluty. Aby zapobiec podszywaniu się
+pod innych uzytkownikow, gdyż wszytkei numery sa publiczne, używane sa
+klucze prywatne dzięki którym może zostać wygenerowany elektroniczny
+podpis które odpowiadają podpisowi w czekach i wekslach. Pozwala ona
+innym użytkownika potwierdzić ze ta tranzakcja została wyslana przez
+wlasnie tego użytkownika i wlasnie do tej transakcji. Sa one unikalne
+dla każdej transakcji wiec nie jest to system w którym latwo możemy
+podrobić czyjs podpis. Ten podpis mowi kto wysłał tranzakcje lecz nie
+keidy ja wysłal. Jest to problematycz gdyż ktoś moglby wyslac dwie
+tranzakcje, lecz mieć srodki tylko na jedna. Stwaza to problem bo rozne
+osoby na swiecie moglyby posiadac rozne wartości w swojej bazie przez
+opóźnienia przesyłowe. Bitcoin i inne waluty zapobiegają temu poprzez
+tworzenie lancucha transakcji który ustala kolejność tych transakcji.
+Kolejnosc tych transakcji zależy trochę od matematycznej loterii. Każdy
+uczestnik tej loterii wybiera jedna tranzakcje i proboje ja rozwiazac.
+Ten kto pierwszy rozwiaze otrzymany problem dodaje swoja tranzakcje do
+lancucha jako ostatnia tranzakcja.
 
-Wszystko opiera się na technologii zwanje blockchain, jest to rosnaca
-lista rekordow nazwanych blockami. Sa one polaczane prz pomocy
-cryptografi, oznacza ze każdy z nich zawiera cryptographic hash
-poprzedniego bloczka, znak czasu idate dranzakcji, najczęściej sa
-przedstawiane jako drzewo Merkle.\
-Kryptograficzna funkcja hash, jest to specjalna klasa funkcji hash,,
-Jest to algorytm matematyczny który mapuje dane dowolnego rodzaju do
-bitowe string'u z ustalona dlugoscia zwanego hashehm. Jest stworzona by
-tworzyla funkcje jednostronna, jest to funkcja która latwo sconvertowa
-lecz niemozliwa to odwrócenia.
+Wszsytko opiera się na technologii zwanej blockchain, jest to rosnaca
+lista rekordow nazywanych blockami. Blocki te mogą być przechowywane
+jako plik lub prosta baza danych. Blocki sa połączone ze sobą, odnoszą
+się one do poprzedniego bloku w łańcuchu. Są one przedstawiane jako
+bloczki ustawione jeden nad drugim gdzie jego wysokość określa odleglosc
+od pierwszego bloku, takei przedstawienie jest odmiana drzewka Merkle.
+Każdy blok może zostać zidentyfikowany po hash'u który jest generowany
+przy pomocy SHA256 cryptographic hash algorithm w nagłówku każdego
+blocku. Każdy blok zna swojego „rodzica" dzięki polu „hash poprzedniego
+blocku" (z ang. „previous block hash")w jego nagłówku. Łańcuch ten
+ciągnie się az do pierwszego bloku który został stworzony w bitcoinie
+nazywanym „Genesis block". W czasie aktualizacji systemu lub wytworzeniu
+dwóch blokow na tym samym rodzicu powstają fork'i. Musimy pamietac ze
+technologia blockchain bazuje na wspólnym działaniu wielu komputerow .
+Każdy z pojedynczych komputerow którego celem jest weryfikacja
+blockchainowych rejestrow publicznych i utrzymywanie sieci bezpiecznej
+jest potocznie zwany „full node". Aby było to możliwe każdy full node
+musi pracować na tej samej wersji oprogramowania, aby uzyskac dostep do
+tych samych rejestrow. Dla przykładu full node operujący na systemie
+Bitcoin Core ma dostep do rejestrow blockchainowych Bitcoina, dzięki
+czemu może zweryfikować transakcje Bitcoinowe i mieć dostep do historii
+transakcji, lecz system operujący na oprogramowaniu Go-etherum nie mogą
+uzyskac dostępu do blockchaina Bitcoin'a. Istnieja dwa rodzaje:\
+Hard Frok -- Istnieje on wtedy gdy powstają dwie różne wersje, ta w
+której obowiazuje wszystkie stare prawa i ta w której obowiazuja nowe,
+są one całkowicie od siebie niezależne, nie ma pomiędzy nimi transportu
+danych ani komunikacji, maja one dostęp do tej samej historii transakcji
+lecz od momenut podziału ich historie się nie będą pokrywać.
+![E:\\pobrane\\licencjat\\RmGZ.png](media/image1.png){width="5.8125in"
+height="2.5625in"}\
+\
+Soft Fork -- Dzieje się tak kiedy wprowadzamy nowe protokoły które sa
+kompatybilne
+wstecz.![E:\\pobrane\\licencjat\\RH3J.png](media/image2.png){width="6.291666666666667in"
+height="2.4895833333333335in"}
 
 Jak to się odnosi do naszego tematu? W krypto walutach potwierdzenie
 jest czyms co pozwala na temu systemowi dzialac. Dopuki tranzakcja jest
