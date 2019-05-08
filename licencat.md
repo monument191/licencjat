@@ -61,13 +61,11 @@ której obowiazuje wszystkie stare prawa i ta w której obowiazuja nowe,
 są one całkowicie od siebie niezależne, nie ma pomiędzy nimi transportu
 danych ani komunikacji, maja one dostęp do tej samej historii transakcji
 lecz od momenut podziału ich historie się nie będą pokrywać.
-![](https://cdn.discordapp.com/attachments/116593881700761602/575815489683718154/RmGZ.png){width="5.8125in"
-height="2.5625in"}\
+![](https://cdn.discordapp.com/attachments/116593881700761602/575815489683718154/RmGZ.png)
 \
 Soft Fork -- Dzieje się tak kiedy wprowadzamy nowe protokoły które sa
 kompatybilne
-wstecz.![](https://cdn.discordapp.com/attachments/116593881700761602/575815494796443740/RH3J.png){width="6.291666666666667in"
-height="2.4895833333333335in"}
+wstecz.![](https://cdn.discordapp.com/attachments/116593881700761602/575815494796443740/RH3J.png)
 
 Jak to się odnosi do naszego tematu? W krypto walutach potwierdzenie
 jest czyms co pozwala na temu systemowi dzialac. Dopuki tranzakcja jest
